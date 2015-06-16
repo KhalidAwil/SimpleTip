@@ -20,23 +20,22 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="70sp"
-        android:id="@+id/billLinearLayout">
+        android:id="@+id/billLinearLayout"
+        android:gravity="center_horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/billAmountTextView"
-            android:layout_weight="1"
             android:text="@string/billAmountString"
             android:textSize="20sp"
             android:gravity="center_vertical|center_horizontal" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="150sp"
             android:layout_height="match_parent"
             android:id="@+id/billAmountEditText"
             android:hint="@string/billAmountHintString"
-            android:layout_weight="1"
             android:inputType="numberDecimal" />
     </LinearLayout>
 
@@ -49,21 +48,22 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/tipString"
             android:id="@+id/tipTextView"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:gravity="center_vertical" />
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/tipEditText"
             android:hint="@string/tipHintString"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Idea"
             android:id="@+id/tipButon" />
     </LinearLayout>
@@ -72,13 +72,16 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="70sp"
-        android:id="@+id/payLinearLayout">
+        android:id="@+id/payLinearLayout"
+        android:gravity="center_horizontal">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/payTextView" />
+            android:layout_height="match_parent"
+            android:text="@string/payViewString"
+            android:id="@+id/payTextView"
+            android:textSize="20sp"
+            android:gravity="center_vertical" />
 
         <NumberPicker
             android:id="@+id/number_picker"
@@ -87,13 +90,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/payMoreButton" />
 
     </LinearLayout>
 
