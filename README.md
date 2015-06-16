@@ -1,0 +1,2 @@
+# SimpleTip
+Simple Tip calulator
