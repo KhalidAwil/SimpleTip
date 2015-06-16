@@ -13,6 +13,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        NumberPicker np= (NumberPicker) findViewById(R.id.number_picker);
+        np.setMaxValue(10);
+        np.setMinValue(1);
+        np.setWrapSelectorWheel(false);
     }
 
 
