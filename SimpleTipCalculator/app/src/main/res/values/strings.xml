@@ -14,5 +14,9 @@
     <string name="secondbillAmountString">Bill:</string>
     <string name="secondTipAmountString">Tip:</string>
     <string name="secondTotalAmountString">Total:</string>
+    <string name="wantATipString">Want a tip suggestion?</string>
+    <string name="ratingsString">Rate your experience for a tip suggestion.</string>
+    <string name="rateRateString">Rate</string>
+    <string name="rateCancelString">Cancel</string>
 
 </resources>
