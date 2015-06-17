@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Material">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">#4CAF50</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="android:colorPrimaryDark">#388E3C</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="android:colorAccent">#27ae60</item>
+
+        <item name="android:statusBarColor">#388E3C</item>
+    </style>
+</resources>

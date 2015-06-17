@@ -39,7 +39,9 @@
             android:id="@+id/billAmountEditText"
             android:hint="@string/billAmountHintString"
             android:textAlignment="gravity"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:layout_gravity="center"
+            android:gravity="center_vertical|center_horizontal" />
     </LinearLayout>
 
     <LinearLayout
@@ -63,7 +65,8 @@
             android:layout_height="match_parent"
             android:id="@+id/tipEditText"
             android:hint="@string/tipHintString"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal"
+            android:gravity="center_vertical|center_horizontal" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
