@@ -3,6 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:background="#2c3e50"
     android:weightSum="1">
 
     <LinearLayout
@@ -18,7 +19,9 @@
             android:layout_height="wrap_content"
             android:text="@string/secondbillAmountString"
             android:textSize="25sp"
-            android:id="@+id/billSummary"/>
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/billSummary"
+            android:paddingTop="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -33,7 +36,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
-            android:id="@+id/billSummaryValue" />
+            android:id="@+id/billSummaryValue"
+            android:textSize="40sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -49,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/secondTipAmountString"
+            android:layout_gravity="center_horizontal"
             android:textSize="25sp"
             android:id="@+id/tipSummary" />
 
@@ -66,7 +71,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
-            android:id="@+id/tipSummaryValue" />
+            android:id="@+id/tipSummaryValue"
+            android:textSize="40sp" />
         </LinearLayout>
 
     <LinearLayout
@@ -99,7 +105,8 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text=""
-                android:id="@+id/totalSummaryValue" />
+                android:id="@+id/totalSummaryValue"
+                android:textSize="40sp" />
 
         </LinearLayout>
 </LinearLayout>

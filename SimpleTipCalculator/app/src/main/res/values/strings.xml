@@ -11,5 +11,8 @@
     <string name="tipHintString">Enter tip percentage</string>
     <string name="calculateTipString">Calculate Tip</string>
     <string name="payViewString">People splitting the bill</string>
+    <string name="secondbillAmountString">Bill:</string>
+    <string name="secondTipAmountString">Tip:</string>
+    <string name="secondTotalAmountString">Total:</string>
 
 </resources>

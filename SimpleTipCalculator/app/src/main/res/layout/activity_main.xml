@@ -5,7 +5,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:gravity="center_horizontal">
+    android:background="#2c3e50"
+    android:gravity="center_horizontal"
+    android:baselineAligned="true">
 
 
     <ImageView
@@ -18,13 +20,13 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="70sp"
         android:id="@+id/billLinearLayout"
         android:gravity="center_horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="85dp"
             android:layout_height="match_parent"
             android:id="@+id/billAmountTextView"
             android:text="@string/billAmountString"
@@ -36,6 +38,7 @@
             android:layout_height="match_parent"
             android:id="@+id/billAmountEditText"
             android:hint="@string/billAmountHintString"
+            android:textAlignment="gravity"
             android:inputType="numberDecimal" />
     </LinearLayout>
 
@@ -52,7 +55,8 @@
             android:text="@string/tipString"
             android:id="@+id/tipTextView"
             android:textSize="20sp"
-            android:gravity="center_vertical" />
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -98,5 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/calculateTipString"
-        android:id="@+id/calculateButton" />
+        android:id="@+id/calculateButton"
+        android:onClick="onCalculateTip"/>
+
 </LinearLayout>
