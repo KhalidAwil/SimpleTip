@@ -24,20 +24,24 @@ public class MainActivity extends ActionBarActivity {
 
     final Context context = this;
     private float serviceRating;
+    EditText billAmountET;
+    EditText tipAmountET;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //Add filters to the editText fields
-        EditText billAmountET = (EditText)findViewById(R.id.billAmountEditText);
+        billAmountET = (EditText)findViewById(R.id.billAmountEditText);
         billAmountET.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(5,2)});
-        EditText tipAmountET = (EditText)findViewById(R.id.tipEditText);
+
+        tipAmountET = (EditText)findViewById(R.id.tipEditText);
         tipAmountET.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(3,2)});
+
+        //Set the number picker values.
         NumberPicker np= (NumberPicker) findViewById(R.id.number_picker);
         np.setMaxValue(10);
         np.setMinValue(1);
@@ -70,21 +74,14 @@ public class MainActivity extends ActionBarActivity {
     public void onCalculateTip(View view) {
         // Re-create widgets from MainActitiy to obtain values from
 
-        EditText billAmountET = (EditText)findViewById(R.id.billAmountEditText);
-        EditText tipAmountET = (EditText)findViewById(R.id.tipEditText);
         NumberPicker numberOfPayersP = (NumberPicker)findViewById(R.id.number_picker);
-        //Button calculateButton = (Button)findViewById(R.id.calculateButton);
 
-        if((billAmountET.getText().toString().isEmpty())||(tipAmountET.getText().toString().isEmpty())) {
-            CharSequence text = "One or more fields have been left blank. Please enter field(s)";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(this, text, duration);
-            toast.show();
-
-            //calculateButton.setEnabled(false);
-        }
-        else{
+        //Validate user inputs, then process user inputs.
+        if( billAmountET.getText().toString().isEmpty() ) {
+            toast("Bill amount field is blank. Please enter your bill.", Toast.LENGTH_LONG);
+        } else if ( tipAmountET.getText().toString().isEmpty() ) {
+            toast("Tip percentage field is blank. Please enter your tip percentage", Toast.LENGTH_SHORT);
+        } else {
             // Pull values from widgets
             Double billAmount = Double.parseDouble(billAmountET.getText().toString());
             Double tipAmount = Double.parseDouble(tipAmountET.getText().toString());
@@ -147,8 +144,12 @@ public class MainActivity extends ActionBarActivity {
 
     private float getTipPercentage(float rating) {
         float tipPercentage = 10 + (rating * 2);
-        Toast.makeText(this, "We suggest you tip " +
-                "" + tipPercentage + " based on your rating.", Toast.LENGTH_LONG).show();
+        toast("We suggest you tip " +
+                "" + tipPercentage + " based on your rating.", Toast.LENGTH_LONG);
         return tipPercentage;
+    }
+
+    private void toast( CharSequence text, int duration ) {
+        Toast.makeText(this, text, duration).show();
     }
 }
