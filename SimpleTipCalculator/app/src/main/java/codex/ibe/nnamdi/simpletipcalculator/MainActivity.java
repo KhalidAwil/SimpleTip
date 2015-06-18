@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,6 +32,12 @@ public class MainActivity extends ActionBarActivity {
         //getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Add filters to the editText fields
+        EditText billAmountET = (EditText)findViewById(R.id.billAmountEditText);
+        billAmountET.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(5,2)});
+        EditText tipAmountET = (EditText)findViewById(R.id.tipEditText);
+        tipAmountET.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(3,2)});
         NumberPicker np= (NumberPicker) findViewById(R.id.number_picker);
         np.setMaxValue(10);
         np.setMinValue(1);

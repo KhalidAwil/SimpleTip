@@ -7,8 +7,8 @@
     <string name="string_logo">logo</string>
     <string name="billAmountString">Bill Amount</string>
     <string name="billAmountHintString">Amount</string>
-    <string name="tipString">Tip %</string>
-    <string name="tipHintString">Enter tip percentage</string>
+    <string name="tipString">Tip (%)</string>
+    <string name="tipHintString"></string>
     <string name="calculateTipString">Calculate Tip</string>
     <string name="payViewString">People splitting the bill</string>
     <string name="secondbillAmountString">Bill:</string>
