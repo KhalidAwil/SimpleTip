@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="codex.ibe.nnamdi.simpletipcalculator" >
 
     <application
@@ -13,14 +14,15 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".SecondScreen"
             android:label="Summary"
             >
+        </activity>
+        <activity android:name=".PreferencesActivity"
+            android:label="Settings">
         </activity>
     </application>
 
