@@ -31,13 +31,20 @@ public class SecondScreen extends Activity {
         TextView billAmountTV = (TextView)findViewById(R.id.billSummaryValue);
         TextView tipAmountTV = (TextView)findViewById(R.id.tipSummaryValue);
         TextView totalAmountTV = (TextView)findViewById(R.id.totalSummaryValue);
+        TextView tipPerPersonAmountTextView = (TextView)findViewById(R.id.tipPerPersonValue);
+        TextView eachPersonPayTextView = (TextView)findViewById(R.id.eachPersonPayValue);
 
         Double tipAmount = (((tipPercentage)/ 100)*(billAmount));
         Double totalAmount = billAmount + tipAmount;
 
+        Double eachPersonTip = tipAmount/numberOfPayers;
+        Double eachPersonPay = totalAmount/numberOfPayers;
+
         tipAmount = round(tipAmount, 2);
         totalAmount = round(totalAmount, 2);
-
+        eachPersonPay = round(eachPersonPay, 2);
+        eachPersonTip = round(eachPersonTip, 2);
+                
         StringBuilder billTemp = new StringBuilder(billAmount.toString());
         billTemp.insert(0,"$ ");
         String billFinal = billTemp.toString();
@@ -50,10 +57,20 @@ public class SecondScreen extends Activity {
         totalTemp.insert(0, "$ ");
         String totalFinal = totalTemp.toString();
 
+        StringBuilder eachTipStringBuilder = new StringBuilder(eachPersonTip.toString());
+        eachTipStringBuilder.insert(0, "$ ");
+        String eachTipfinal = eachTipStringBuilder.toString();
+
+        StringBuilder eachPayStringBuilder = new StringBuilder(eachPersonPay.toString());
+        eachPayStringBuilder.insert(0, "$ ");
+        String eachPayfinal = eachPayStringBuilder.toString();
+
 
         billAmountTV.setText(billFinal.toString());
         tipAmountTV.setText(tipFinal.toString());
         totalAmountTV.setText(totalFinal.toString());
+        tipPerPersonAmountTextView.setText(eachTipfinal);
+        eachPersonPayTextView.setText(eachPayfinal);
     }
 
     public static double round(double value, int places) {

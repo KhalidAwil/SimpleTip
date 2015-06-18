@@ -28,7 +28,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     private EditText billAmountET;
     private EditText tipAmountET;
     private Spinner spinner;
-    private int numberOfPeoplePaying;
+    private int numberOfPeoplePaying = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,12 +97,10 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             //Create and initialize our intent to move to the second screen or activity
             Intent getBalance = new Intent(this, SecondScreen.class);
 
-            final int result = 1;
-
             // Sending the values obtained from widgets to the second screen
             getBalance.putExtra("billAmount", billAmount);
             getBalance.putExtra("tipAmount", tipAmount);
-            getBalance.putExtra("numberOfPayers", numberOfPeoplePaying);
+            getBalance.putExtra("numOfPayers", numberOfPeoplePaying);
 
             // Start our intent
             startActivity(getBalance);
