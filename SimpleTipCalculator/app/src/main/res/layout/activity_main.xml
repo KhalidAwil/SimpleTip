@@ -93,14 +93,11 @@
             android:textSize="20sp"
             android:gravity="center_vertical" />
 
-        <NumberPicker
-            android:id="@+id/number_picker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true" />
+            <!--android:background="@android:drawable/btn_dropdown"-->
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

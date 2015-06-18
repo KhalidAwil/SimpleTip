@@ -14,19 +14,23 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.RatingBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
 
     final Context context = this;
     private float serviceRating;
-    EditText billAmountET;
-    EditText tipAmountET;
-
+    private EditText billAmountET;
+    private EditText tipAmountET;
+    private Spinner spinner;
+    private int numberOfPeoplePaying;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +46,16 @@ public class MainActivity extends ActionBarActivity {
         tipAmountET.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(3,2)});
 
         //Set the number picker values.
-        NumberPicker np= (NumberPicker) findViewById(R.id.number_picker);
-        np.setMaxValue(10);
-        np.setMinValue(1);
-        np.setWrapSelectorWheel(false);
+//        NumberPicker np= (NumberPicker) findViewById(R.id.number_picker);
+//        np.setMaxValue(10);
+//        np.setMinValue(1);
+//        np.setWrapSelectorWheel(false);
+        spinner = (Spinner)findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this,
+                R.array.numSplitBill, android.R.layout.simple_spinner_item);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(this);
     }
 
 
@@ -74,7 +84,8 @@ public class MainActivity extends ActionBarActivity {
     public void onCalculateTip(View view) {
         // Re-create widgets from MainActitiy to obtain values from
 
-        NumberPicker numberOfPayersP = (NumberPicker)findViewById(R.id.number_picker);
+//        NumberPicker numberOfPayersP = (NumberPicker)findViewById(R.id.number_picker);
+        Spinner spinner = (Spinner)findViewById(R.id.spinner);
 
         //Validate user inputs, then process user inputs.
         if( billAmountET.getText().toString().isEmpty() ) {
@@ -85,7 +96,6 @@ public class MainActivity extends ActionBarActivity {
             // Pull values from widgets
             Double billAmount = Double.parseDouble(billAmountET.getText().toString());
             Double tipAmount = Double.parseDouble(tipAmountET.getText().toString());
-            int numberOfPayers = numberOfPayersP.getValue();
 
             //Create and initialize our intent to move to the second screen or activity
             Intent getBalance = new Intent(this, SecondScreen.class);
@@ -95,7 +105,7 @@ public class MainActivity extends ActionBarActivity {
             // Sending the values obtained from widgets to the second screen
             getBalance.putExtra("billAmount", billAmount);
             getBalance.putExtra("tipAmount", tipAmount);
-            getBalance.putExtra("numberOfPayers", numberOfPayers);
+            getBalance.putExtra("numberOfPayers", numberOfPeoplePaying);
 
             // Start our intent
             startActivity(getBalance);
@@ -151,5 +161,46 @@ public class MainActivity extends ActionBarActivity {
 
     private void toast( CharSequence text, int duration ) {
         Toast.makeText(this, text, duration).show();
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        switch (position) {
+            case 0:
+                numberOfPeoplePaying = 1;
+                break;
+            case 1:
+                numberOfPeoplePaying = 2;
+                break;
+            case 2:
+                numberOfPeoplePaying = 3;
+                break;
+            case 3:
+                numberOfPeoplePaying = 4;
+                break;
+            case 4:
+                numberOfPeoplePaying = 5;
+                break;
+            case 5:
+                numberOfPeoplePaying = 6;
+                break;
+            case 6:
+                numberOfPeoplePaying = 7;
+                break;
+            case 7:
+                numberOfPeoplePaying = 8;
+                break;
+            case 8:
+                numberOfPeoplePaying = 9;
+                break;
+            case 9:
+                numberOfPeoplePaying = 10;
+                break;
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
