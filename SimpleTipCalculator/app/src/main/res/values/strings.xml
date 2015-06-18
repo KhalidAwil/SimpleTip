@@ -5,12 +5,12 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="string_logo">logo</string>
-    <string name="billAmountString">Bill Amount</string>
+    <string name="billAmountString"></string>
     <string name="billAmountHintString">Amount</string>
     <string name="tipString">Tip (%)</string>
     <string name="tipHintString"></string>
     <string name="calculateTipString">Calculate Tip</string>
-    <string name="payViewString">People splitting the bill</string>
+    <string name="payViewString">Number of payers</string>
     <string name="secondbillAmountString">Bill:</string>
     <string name="secondTipAmountString">Tip:</string>
     <string name="secondTotalAmountString">Total:</string>

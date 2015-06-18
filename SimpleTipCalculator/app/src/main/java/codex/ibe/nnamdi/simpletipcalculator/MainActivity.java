@@ -45,11 +45,6 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         tipAmountET = (EditText)findViewById(R.id.tipEditText);
         tipAmountET.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(3,2)});
 
-        //Set the number picker values.
-//        NumberPicker np= (NumberPicker) findViewById(R.id.number_picker);
-//        np.setMaxValue(10);
-//        np.setMinValue(1);
-//        np.setWrapSelectorWheel(false);
         spinner = (Spinner)findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this,
                 R.array.numSplitBill, android.R.layout.simple_spinner_item);
