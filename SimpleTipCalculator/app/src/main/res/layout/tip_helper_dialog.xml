@@ -31,30 +31,5 @@
             android:id="@+id/ratingBar" />
     </LinearLayout>
 
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:id="@+id/responseLayout">-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:text="@string/rateRateString"-->
-            <!--android:id="@+id/rateTextView"-->
-            <!--android:layout_weight="1"-->
-            <!--android:textSize="30sp"-->
-            <!--android:gravity="center_horizontal" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:text="@string/rateCancelString"-->
-            <!--android:id="@+id/cancelTextView"-->
-            <!--android:layout_weight="1"-->
-            <!--android:textSize="30sp"-->
-            <!--android:gravity="center_horizontal" />-->
-
-    <!--</LinearLayout>-->
 
 </LinearLayout>

@@ -61,12 +61,13 @@
             android:layout_gravity="center_horizontal" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:id="@+id/tipEditText"
             android:hint="@string/tipHintString"
             android:inputType="numberDecimal"
-            android:gravity="center_vertical|center_horizontal" />
+            android:gravity="center_vertical|center_horizontal"
+            android:maxLength="5" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -85,20 +86,18 @@
         android:gravity="center_horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:text="@string/payViewString"
             android:id="@+id/payTextView"
             android:textSize="20sp"
             android:gravity="center_vertical" />
 
-        <NumberPicker
-            android:id="@+id/number_picker"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true" />
+            android:gravity="center_vertical|center_horizontal" />
 
     </LinearLayout>
 
