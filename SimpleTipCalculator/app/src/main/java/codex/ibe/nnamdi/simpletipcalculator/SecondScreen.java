@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.util.Locale;
 
 /**
  * Created by Khalid on 2015-06-16.
@@ -70,7 +72,7 @@ public class SecondScreen extends ActionBarActivity {
         tipAmountTV.setText(tipFinal.toString());
         totalAmountTV.setText(totalFinal.toString());
         tipPerPersonAmountTextView.setText(eachTipfinal);
-        eachPersonPayTextView.setText(eachPayfinal);
+        eachPersonPayTextView.setText(formatEuro(eachPersonPay));
     }
 
     public static double round(double value, int places) {
@@ -79,6 +81,18 @@ public class SecondScreen extends ActionBarActivity {
         BigDecimal bd = new BigDecimal(value);
         bd = bd.setScale(places, RoundingMode.HALF_UP);
         return bd.doubleValue();
+    }
+
+    public static String formatEuro( Double toFormat) {
+        return DecimalFormat.getCurrencyInstance(Locale.GERMANY).format(toFormat);
+    }
+
+    public static String formatDollar(Double toFormat) {
+        return DecimalFormat.getCurrencyInstance(Locale.CANADA).format(toFormat);
+    }
+
+    public static String formatPound(Double toFormat) {
+        return DecimalFormat.getCurrencyInstance(Locale.UK).format(toFormat);
     }
 
 
