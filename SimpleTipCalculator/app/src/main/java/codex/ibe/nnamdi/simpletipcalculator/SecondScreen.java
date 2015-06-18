@@ -44,7 +44,7 @@ public class SecondScreen extends Activity {
         totalAmount = round(totalAmount, 2);
         eachPersonPay = round(eachPersonPay, 2);
         eachPersonTip = round(eachPersonTip, 2);
-                
+
         StringBuilder billTemp = new StringBuilder(billAmount.toString());
         billTemp.insert(0,"$ ");
         String billFinal = billTemp.toString();

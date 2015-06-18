@@ -196,6 +196,10 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+        //TODO Clean up second screen activity
+        //TODO Name activities
+        //TODO Fix idea button
+        //TODO Implement settings functions
 
     }
 }
