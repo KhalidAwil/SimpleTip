@@ -6,129 +6,162 @@
     android:gravity="center_vertical|center_horizontal"
     android:orientation="vertical">
 
+
     <LinearLayout
+        android:id="@+id/billAmountLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:id="@+id/billAmountLayout">
+        android:layout_weight="0.7"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/billSummary"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:gravity="bottom"
             android:paddingTop="10dp"
             android:text="@string/secondbillAmountString"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/billSummaryValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="bottom|right"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="40sp" />
+            android:textSize="25sp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/tipAmountLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:id="@+id/tipAmountLayout">
+        android:layout_weight="0.7"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/tipSummary"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:gravity="bottom"
             android:text="@string/secondTipAmountString"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tipSummaryValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="bottom|right"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="40sp" />
+            android:textSize="25sp" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/totalAmoutLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:id="@+id/totalAmoutLayout">
+        android:layout_weight="0.7"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/totalSummary"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
             android:padding="10dp"
             android:text="@string/secondTotalAmountString"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/totalSummaryValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|right"
+            android:padding="10dp"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="40sp" />
+            android:textSize="25sp" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/singleBillSectionLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tipPerPersonLAyout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="vertical"
-        android:id="@+id/tipPerPersonLAyout">
+        android:orientation="horizontal">
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tipPerPersonString"
             android:id="@+id/tipPerPersonString"
-            android:textSize="30sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="bottom"
+            android:padding="10dp"
+            android:text="@string/tipPerPersonString"
+            android:textSize="25sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/tipPerPersonValue"
-            android:textSize="40sp" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="bottom|right"
+            android:padding="10dp"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/totalPerPersonLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="vertical"
-        android:id="@+id/totalPerPersonLayout">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp">
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/eachPersonPayString"
             android:id="@+id/eachPersonPayString"
-            android:textSize="30sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:padding="10dp"
+            android:text="@string/eachPersonPayString"
+            android:textSize="25sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/eachPersonPayValue"
-            android:textSize="40sp" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|right"
+            android:padding="10dp"
+            android:textSize="25sp" />
     </LinearLayout>
+
 </LinearLayout>

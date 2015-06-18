@@ -72,9 +72,9 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Idea"
+            android:layout_height="wrap_content"
             android:id="@+id/tipButon"
+            android:background="@android:drawable/ic_menu_help"
             android:onClick="onClickHelpTip" />
     </LinearLayout>
 
