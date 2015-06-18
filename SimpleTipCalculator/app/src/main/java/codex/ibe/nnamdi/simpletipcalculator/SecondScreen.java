@@ -13,7 +13,7 @@ import java.math.RoundingMode;
 /**
  * Created by Khalid on 2015-06-16.
  */
-public class SecondScreen extends Activity {
+public class SecondScreen extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

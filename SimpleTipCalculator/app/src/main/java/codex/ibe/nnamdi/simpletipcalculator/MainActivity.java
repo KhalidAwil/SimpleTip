@@ -28,6 +28,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     private EditText billAmountET;
     private EditText tipAmountET;
     private Spinner spinner;
+    private boolean ratingChanged = false;
     private int numberOfPeoplePaying = 1;
 
     @Override
@@ -81,9 +82,6 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     public void onCalculateTip(View view) {
         // Re-create widgets from MainActitiy to obtain values from
 
-//        NumberPicker numberOfPayersP = (NumberPicker)findViewById(R.id.number_picker);
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
-
         //Validate user inputs, then process user inputs.
         if( billAmountET.getText().toString().isEmpty() ) {
             toast("Bill amount field is blank. Please enter your bill.", Toast.LENGTH_LONG);
@@ -117,9 +115,12 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                 .setPositiveButton(R.string.rateRateString, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        float tipPercentage = getTipPercentage(getServiceRating());
-                        EditText editText = (EditText) findViewById(R.id.tipEditText);
-                        editText.setText(tipPercentage + "");
+                        if(ratingChanged) {
+                            float tipPercentage = getTipPercentage(getServiceRating());
+                            EditText editText = (EditText) findViewById(R.id.tipEditText);
+                            editText.setText(tipPercentage + "");
+                            ratingChanged = false;
+                        }
                     }
                 })
                 .setNegativeButton(R.string.rateCancelString, new DialogInterface.OnClickListener() {
@@ -134,6 +135,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 setServiceRating(rating);
+                ratingChanged = true;
             }
         });
         alertDialog.show();
@@ -197,9 +199,6 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         //TODO Clean up second screen activity
-        //TODO Name activities
-        //TODO Fix idea button
         //TODO Implement settings functions
-
     }
 }
