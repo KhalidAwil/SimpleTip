@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
@@ -101,5 +102,9 @@ public class SecondScreen extends ActionBarActivity {
         }
     }
 
+    public void onClickDone(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
 }
