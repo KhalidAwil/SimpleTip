@@ -2,7 +2,9 @@ package codex.ibe.nnamdi.simpletipcalculator;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -16,6 +18,8 @@ import java.util.Locale;
  * Created by Khalid on 2015-06-16.
  */
 public class SecondScreen extends ActionBarActivity {
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,9 @@ public class SecondScreen extends ActionBarActivity {
         TextView totalAmountTV = (TextView)findViewById(R.id.totalSummaryValue);
         TextView tipPerPersonAmountTextView = (TextView)findViewById(R.id.tipPerPersonValue);
         TextView eachPersonPayTextView = (TextView)findViewById(R.id.eachPersonPayValue);
+        TextView tipParameterValue = (TextView)findViewById(R.id.tipParameterValue);
+        TextView peopleValue = (TextView)findViewById(R.id.peopleValue);
+
 
         Double tipAmount = (((tipPercentage)/ 100)*(billAmount));
         Double totalAmount = billAmount + tipAmount;
@@ -47,32 +54,17 @@ public class SecondScreen extends ActionBarActivity {
         eachPersonPay = round(eachPersonPay, 2);
         eachPersonTip = round(eachPersonTip, 2);
 
-        StringBuilder billTemp = new StringBuilder(billAmount.toString());
-        billTemp.insert(0,"$ ");
-        String billFinal = billTemp.toString();
+        billAmountTV.setText(format(billAmount));
+        tipAmountTV.setText(format(tipAmount));
+        totalAmountTV.setText(format(totalAmount));
+        tipPerPersonAmountTextView.setText(format(eachPersonTip));
+        eachPersonPayTextView.setText(format(eachPersonPay));
+        setSummary(tipParameterValue, peopleValue, numberOfPayers, tipPercentage);
+    }
 
-        StringBuilder tipTemp = new StringBuilder(tipAmount.toString());
-        tipTemp.insert(0, "$ ");
-        String tipFinal = tipTemp.toString();
-
-        StringBuilder totalTemp = new StringBuilder(totalAmount.toString());
-        totalTemp.insert(0, "$ ");
-        String totalFinal = totalTemp.toString();
-
-        StringBuilder eachTipStringBuilder = new StringBuilder(eachPersonTip.toString());
-        eachTipStringBuilder.insert(0, "$ ");
-        String eachTipfinal = eachTipStringBuilder.toString();
-
-        StringBuilder eachPayStringBuilder = new StringBuilder(eachPersonPay.toString());
-        eachPayStringBuilder.insert(0, "$ ");
-        String eachPayfinal = eachPayStringBuilder.toString();
-
-
-        billAmountTV.setText(billFinal.toString());
-        tipAmountTV.setText(tipFinal.toString());
-        totalAmountTV.setText(totalFinal.toString());
-        tipPerPersonAmountTextView.setText(eachTipfinal);
-        eachPersonPayTextView.setText(formatEuro(eachPersonPay));
+    private void setSummary(TextView tipParameterValue, TextView peopleValue, int numberOfPayers, Double tipPercentage) {
+        tipParameterValue.setText(tipPercentage + "%");
+        peopleValue.setText(numberOfPayers + "");
     }
 
     public static double round(double value, int places) {
@@ -93,6 +85,20 @@ public class SecondScreen extends ActionBarActivity {
 
     public static String formatPound(Double toFormat) {
         return DecimalFormat.getCurrencyInstance(Locale.UK).format(toFormat);
+    }
+
+    public String format(Double toFormat) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String preference = sharedPreferences.getString("currency","1");
+        if (preference.equals("1") ) {
+            return formatDollar(toFormat);
+        } else if (preference.equals("2") ) {
+            return formatEuro(toFormat);
+        } else if (preference.equals("3") ) {
+            return formatPound(toFormat);
+        } else {
+            return formatDollar(toFormat);
+        }
     }
 
 
