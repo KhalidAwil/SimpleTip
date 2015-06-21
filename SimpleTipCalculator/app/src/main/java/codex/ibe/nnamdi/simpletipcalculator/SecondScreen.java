@@ -103,8 +103,7 @@ public class SecondScreen extends ActionBarActivity {
     }
 
     public void onClickDone(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        finish();
     }
 
 }
