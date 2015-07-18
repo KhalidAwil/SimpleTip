@@ -1,13 +1,14 @@
 package codex.ibe.nnamdi.simpletipcalculator;
 
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
 import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,7 +22,7 @@ import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
     final Context context = this;
     private float serviceRating;
@@ -36,6 +37,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
         //Add filters to the editText fields
         billAmountET = (EditText)findViewById(R.id.billAmountEditText);
@@ -51,7 +53,9 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(this);
 
-        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String preference = sharedPreferences.getString("defaultTip","10");
+        tipAmountET.setText(preference);
     }
 
 
@@ -200,7 +204,6 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        //TODO Clean up second screen activity
         //TODO Implement settings functions
     }
 }

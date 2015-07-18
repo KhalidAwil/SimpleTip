@@ -10,7 +10,7 @@
     <string name="tipString">Tip Amount(%)</string>
     <string name="tipHintString"></string>
     <string name="calculateTipString">Calculate Tip</string>
-    <string name="payViewString">Number of payers</string>
+    <string name="payViewString">Number of people</string>
     <string name="secondbillAmountString">Bill Amount:</string>
     <string name="secondTipAmountString">Tip Amount:</string>
     <string name="secondTotalAmountString">Total Amount:</string>
@@ -22,6 +22,10 @@
     <string name="tipPerPersonString">Tip per person:</string>
     <string name="eachPersonPayString">Each person pays:</string>
     <string name="totalSectionString">Total Section</string>
+    <string name="defaultTipPercentage">10</string>
+    <string name="defaultCurrency">1</string>
+    <string name="defaultTipPercentageDialogString">Set your default tip percentage</string>
+    <string name="defaultCurrencyDialogString">Choose your default currency</string>
     <string-array name="numSplitBill">
         <item>1</item>
         <item>2</item>

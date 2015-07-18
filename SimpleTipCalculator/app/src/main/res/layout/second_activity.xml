@@ -2,10 +2,77 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2c3e50"
     android:gravity="center_vertical|center_horizontal"
     android:orientation="vertical">
 
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/summaryBackground"
+        android:layout_weight="1"
+        android:id="@+id/summaryParametersLayout">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/tipParameterSummary"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_weight="1"
+                android:text="Tip:"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/tipParameterValue"
+                android:layout_weight="1"
+                android:text="10%"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_height="0dp" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/peopleSummary"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:text="People:"
+                android:textSize="20dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/peopleValue"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:text="3"
+                android:textSize="20dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_height="0dp" />
+
+            </LinearLayout>
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/billAmountLayout"
@@ -13,6 +80,7 @@
         android:layout_height="0dp"
         android:layout_weight="0.7"
         android:gravity="center_vertical"
+        android:background="#BBDEFB"
         android:orientation="horizontal"
         android:padding="10dp">
 
@@ -24,7 +92,7 @@
             android:gravity="bottom"
             android:paddingTop="10dp"
             android:text="@string/secondbillAmountString"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/billSummaryValue"
@@ -34,12 +102,13 @@
             android:gravity="bottom|right"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/tipAmountLayout"
         android:layout_width="match_parent"
+        android:background="#BBDEFB"
         android:layout_height="0dp"
         android:layout_weight="0.7"
         android:orientation="horizontal"
@@ -52,7 +121,7 @@
             android:layout_gravity="left"
             android:gravity="bottom"
             android:text="@string/secondTipAmountString"
-            android:textSize="25sp" />
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/tipSummaryValue"
@@ -62,13 +131,14 @@
             android:gravity="bottom|right"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="25sp" />
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/totalAmoutLayout"
         android:layout_width="match_parent"
+        android:background="#BBDEFB"
         android:layout_height="0dp"
         android:layout_weight="0.7"
         android:orientation="horizontal">
@@ -80,7 +150,7 @@
             android:gravity="bottom"
             android:padding="10dp"
             android:text="@string/secondTotalAmountString"
-            android:textSize="25sp" />
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/totalSummaryValue"
@@ -90,27 +160,40 @@
             android:padding="10dp"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="25sp" />
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/singleBillSectionLayout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="5dp"
+        android:background="#BBDEFB"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingTop="20dp">
+        android:orientation="horizontal">
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/splitTextView"
+            android:layout_height="match_parent"
+            android:gravity="center|fill_horizontal|center_vertical|center_horizontal"
+            android:text=""
+            android:textSize="25sp"
+            android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
+        <!--<View-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="75dp"-->
+            <!--android:background="@android:color/darker_gray" -->
+            <!---->
+
+            <!--/>-->
 
     <LinearLayout
         android:id="@+id/tipPerPersonLAyout"
         android:layout_width="match_parent"
+        android:background="#E3F2FD"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
@@ -121,23 +204,24 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
-            android:gravity="bottom"
+            android:gravity="center_vertical"
             android:padding="10dp"
             android:text="@string/tipPerPersonString"
-            android:textSize="25sp" />
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/tipPerPersonValue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:gravity="bottom|right"
+            android:gravity="center_vertical|right"
             android:padding="10dp"
-            android:textSize="25sp" />
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/totalPerPersonLayout"
+        android:background="#E3F2FD"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -150,18 +234,36 @@
             android:id="@+id/eachPersonPayString"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="bottom"
+            android:gravity="center_vertical"
             android:padding="10dp"
             android:text="@string/eachPersonPayString"
-            android:textSize="25sp" />
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/eachPersonPayValue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="bottom|right"
+            android:gravity="center_vertical|right"
             android:padding="10dp"
-            android:textSize="25sp" />
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#E3F2FD"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.6"
+        android:id="@+id/finishLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="done"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onClickDone" />
     </LinearLayout>
 
 </LinearLayout>
